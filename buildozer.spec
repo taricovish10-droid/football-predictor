@@ -5,7 +5,7 @@ package.domain = org.fp
 source.dir = .
 source.include_exts = py,json
 version = 5.6
-requirements = python3,kivy==2.3.0,requests,urllib3,chardet,idna,certifi,charset-normalizer,arabic-reshaper==3.0.0,python-bidi==0.4.2
+requirements = python3,kivy==2.3.0,requests,urllib3,chardet,idna,certifi,charset-normalizer
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE

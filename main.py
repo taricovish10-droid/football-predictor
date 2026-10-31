@@ -2082,8 +2082,19 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.spinner import Spinner
 from kivy.uix.textinput import TextInput
 from kivy.utils import platform
-import arabic_reshaper
-from bidi.algorithm import get_display
+try:
+    import arabic_reshaper
+    from bidi.algorithm import get_display
+    HAS_ARABIC_LIBS = True
+except ImportError:
+    HAS_ARABIC_LIBS = False
+    def get_display(s):
+        return s
+    class _DummyReshaper:
+        @staticmethod
+        def reshape(s):
+            return s
+    arabic_reshaper = _DummyReshaper()
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 def _find_font():
